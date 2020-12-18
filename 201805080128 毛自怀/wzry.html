@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				list-style: none;
+			}
+			
+			.main {
+				width: 100%;
+				height: 700px;
+				margin: auto;
+				border: 1px solid transparent;
+				background: radial-gradient(circle, #f18c07, rgb(63, 82, 223));
+				margin-top: 200px;
+			}
+			
+			.main_section_square {
+				
+				transform: rotate(45deg);
+				width: 355px;
+				height: 355px;
+				position: relative;
+				margin: auto;
+				margin-top: 70px;
+				box-shadow:0 0 130px 36px #7898D1;
+				background-color: #9355ffdb;
+			}/**/
+			
+			.main_section_square {
+				transform-origin: center;
+				/*animation: rotate 1s linear infinite;*/
+			}
+			
+			@keyframes rotate {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(-360deg);
+				}
+			}
+			@keyframes content {
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			
+			.square_content {
+				box-shadow: inset 0 0 29px 36px #0d57d6;
+				width: 305px;
+				height: 305px;
+				position: relative;
+				top: 22px;
+				left: 22px;
+				transform-origin: center;
+				animation: content 3s linear infinite;
+			}
+			
+			.square_content>div {
+				color: #12cc1b;
+				text-align: center;
+				font-size: 23px;
+			}
+			
+			.main_section_square>.square_content>.square_left {
+				transform: rotate(-90deg);
+				position: relative;
+				top: 112px;
+				left: -138px;
+			}
+			
+			.main_section_square>.square_content>.square_right {
+				transform: rotate(90deg);
+				position: relative;
+				top: 50px;
+				left: 134px;
+			}
+			
+			.main_section_square>.square_content>.square_bottom {
+				transform: rotate(-180deg);
+				position: relative;
+				top: 212px;
+				left: -1px;
+			}
+			
+			.main_section_rectangle {
+				width: 100%;
+				height: 200px;
+				position: relative;
+				background-color: #3031337a;
+				bottom: 285px;
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.main_section_rectangle>#left,
+			.main_section_rectangle>#right {
+				display: flex;
+			}
+			
+			.img_left,
+			.img_right {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.border-anim2_left {
+				margin-left: 30px;
+			}
+			
+			.border-anim2_right {
+				margin-right: 30px;
+			}
+			
+			.main_section_rectangle>img {
+				width: 200px;
+				height: 200px;
+				transform: rotate(45deg);
+				border: 5px solid #55dbff;
+			}
+			
+			.border-anim2_left,
+			.border-anim2_right {
+				display: flex;
+				background-color: #2a07f1;
+			}
+			
+			.border-anim-content {
+				width: calc(100% - 1em);
+				height: calc(100% - 1em);
+				margin: 0.5em;
+			}
+			
+			.border-anim2_left,
+			.border-anim2_right {
+				width: 7em;
+				height: 7em;
+				position: relative;
+				margin-top: 50px;
+			}
+			
+			.border-anim2-edge {
+				position: absolute;
+				/* 必须把其他边框置0，否则有默认值存在 */
+				border: 0px solid rgb(87, 219, 10);
+				box-sizing: border-box;
+			}
+			
+			.border-anim2-left {
+				width: 1em;
+				height: 100%;
+				left: 0;
+				border-left-width: 0.5em;
+				animation: anim2-border-run-left 1s -2.5s linear infinite;
+			}
+			
+			.border-anim2-top {
+				height: 1em;
+				width: 100%;
+				top: 0;
+				border-top-width: 0.5em;
+				animation: anim2-border-run-top 1s linear infinite;
+			}
+			
+			.border-anim2-right {
+				width: 1em;
+				height: 100%;
+				right: 0;
+				border-right-width: 0.5em;
+				animation: anim2-border-run-right 1s -2.5s linear infinite;
+			}
+			
+			.border-anim2-bottom {
+				height: 1em;
+				width: 100%;
+				bottom: 0;
+				border-bottom-width: 0.5em;
+				animation: anim2-border-run-bottom 1s linear infinite;
+			}
+			
+			@keyframes anim2-border-run-left {
+				from,
+				to {
+					height: 0;
+				}
+				50% {
+					height: 100%;
+				}
+				from,
+				to,
+				49.9% {
+					top: 0;
+					bottom: auto;
+				}
+				50%,
+				99.9% {
+					top: auto;
+					bottom: 0;
+				}
+			}
+			
+			@keyframes anim2-border-run-top {
+				from,
+				to {
+					width: 0;
+				}
+				50% {
+					width: 100%;
+				}
+				from,
+				to,
+				49.9% {
+					left: auto;
+					right: 0;
+				}
+				50%,
+				99.9% {
+					left: 0;
+					right: auto;
+				}
+			}
+			
+			@keyframes anim2-border-run-right {
+				from,
+				to {
+					height: 0;
+				}
+				50% {
+					height: 100%;
+				}
+				from,
+				to,
+				49.9% {
+					top: auto;
+					bottom: 0;
+				}
+				50%,
+				99.9% {
+					top: 0;
+					bottom: auto;
+				}
+			}
+			
+			@keyframes anim2-border-run-bottom {
+				from,
+				to {
+					width: 0;
+				}
+				50% {
+					width: 100%;
+				}
+				from,
+				to,
+				49.9% {
+					left: 0;
+					right: auto;
+				}
+				50%,
+				99.9% {
+					left: auto;
+					right: 0;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="main_section_square">
+				<div class="square_content">
+					<div class="square_top">
+						<span>升达物联网maosql！！</span>
+					</div>
+					<div class="square_left">
+						<span>升达物联网maosql！！</span>
+					</div>
+					<div class="square_bottom">
+						<span>升达物联网maosql！！</span>
+					</div>
+					<div class="square_right">
+						<span>升达物联网maosql！！</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="main_section_rectangle">
+				<div id="left">
+					<div class="border-anim2_left">
+						<div class="border-anim-content"><img class="img_left" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+					<div class="border-anim2_left">
+						<div class="border-anim-content"><img class="img_left" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+					<div class="border-anim2_left">
+						<div class="border-anim-content"><img class="img_left" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+					<div class="border-anim2_left">
+						<div class="border-anim-content"><img class="img_left" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+					<div class="border-anim2_left">
+						<div class="border-anim-content"><img class="img_left" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+				</div>
+				<img src="img\2.jpg" />
+				<div id="right">
+					<div class="border-anim2_right">
+						<div class="border-anim-content"><img class="img_right" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+					<div class="border-anim2_right">
+						<div class="border-anim-content"><img class="img_right" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+					<div class="border-anim2_right">
+						<div class="border-anim-content"><img class="img_right" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+					<div class="border-anim2_right">
+						<div class="border-anim-content"><img class="img_right" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+					<div class="border-anim2_right">
+						<div class="border-anim-content"><img class="img_right" src="img\1.jpg" /></div>
+						<div class="border-anim2-edge border-anim2-left"></div>
+						<div class="border-anim2-edge border-anim2-top"></div>
+						<div class="border-anim2-edge border-anim2-right"></div>
+						<div class="border-anim2-edge border-anim2-bottom"></div>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>
